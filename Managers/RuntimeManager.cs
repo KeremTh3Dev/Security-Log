@@ -17,7 +17,10 @@ namespace SecurityLog.Managers
             while (true)
             {
                 ViolationMenu.Show(); //ekrana seçimleri koyar
-                UserMethods.DecideViolation(activeUser);
+
+                UserMethods.DecideViolation(activeUser); //seçimden seçtirir
+                
+                UserMethods.RegisterViolation(activeUser); //seçimi kaydettirir
             }
 
             //seçim yaptırma metodunu koy
