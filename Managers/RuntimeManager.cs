@@ -2,6 +2,7 @@
 // This file manages the algorithm flow on runtime
 #endregion
 
+using Actions;
 using SecurityLog.Models;
 using SecurityLog.UI;
 
@@ -11,10 +12,15 @@ namespace SecurityLog.Managers
     {
         public static void Begin()
         {
-            var user = new User();
-            var (username, password) = LoginMenu.Show();
-            user.Name = username;
-            user.Password = password;
+            User activeUser = UserMethods.RegisterUser();
+
+            while (true)
+            {
+                ViolationMenu.Show(); //ekrana seçimleri koyar
+                UserMethods.DecideViolation(activeUser);
+            }
+
+            //seçim yaptırma metodunu koy
         }
     }
 }

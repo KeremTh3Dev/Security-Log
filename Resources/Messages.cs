@@ -4,7 +4,9 @@
 
 namespace SecurityLog.Resources
 {
-    public static class Directive { }
+    public static class Directive
+    {
+    }
 
     public static class ErrorMessage
     {
